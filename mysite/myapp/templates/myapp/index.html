@@ -3,8 +3,12 @@
 {% block body %}
     <h1>index</h1>
 
-    <form action="">
+    <form method="post">
         {% csrf_token %}
         {{  assignment_form.as_p }}
+        <button>add</button>
     </form>
+    {%  for assignment in assignments %}
+        <div>{{ assignment.name }} -- {{ assignment.category }}</div>
+    {% endfor %}
 {% endblock %}
