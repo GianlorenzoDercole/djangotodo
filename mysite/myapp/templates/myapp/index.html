@@ -2,4 +2,9 @@
 
 {% block body %}
     <h1>index</h1>
+
+    <form action="">
+        {% csrf_token %}
+        {{  assignment_form.as_p }}
+    </form>
 {% endblock %}
