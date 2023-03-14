@@ -9,6 +9,6 @@
         <button>add</button>
     </form>
     {%  for assignment in assignments %}
-        <div>{{ assignment.name }} -- {{ assignment.category }}</div>
+        <div>{{ assignment.name }} -- {{ assignment.category }}<span><form method="post" action="{% url 'delete' assignment.id %}">{%  csrf_token%}<button type='submit' name="delete">delete</button></form></span></div>
     {% endfor %}
 {% endblock %}
